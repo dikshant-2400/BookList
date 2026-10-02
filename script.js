@@ -27,9 +27,9 @@ btn.addEventListener("click", function (e) {
     editRow.children[1].innerText = author.value;
     editRow.children[2].innerText = year.value;
 
-    const activeEditBtn = editRow.querySelector(".edit-btn");
-    if (activeEditBtn) {
-      activeEditBtn.style.display = "inline-block";
+    const activeActions = editRow.querySelector(".actions");
+    if (activeActions) {
+      activeActions.style.display = "flex";
     }
 
     editRow = null;
@@ -46,13 +46,16 @@ btn.addEventListener("click", function (e) {
     const bookYear = document.createElement("div");
     bookYear.innerText = year.value;
 
+    const actionsContainer = document.createElement("div");
+    actionsContainer.className = "actions";
+
     const editBtn = document.createElement("button");
     editBtn.innerHTML = '<i class="fa-solid fa-pencil"></i>';
-    editBtn.classList.add("edit-btn");
+    editBtn.className = "action-btn edit-btn";
 
     editBtn.addEventListener("click", function () {
-      document.querySelectorAll(".edit-btn").forEach((b) => {
-        b.style.display = "inline-block";
+      document.querySelectorAll(".actions").forEach((a) => {
+        a.style.display = "flex";
       });
 
       title.value = bookTitle.innerText;
@@ -62,13 +65,31 @@ btn.addEventListener("click", function (e) {
       editRow = section;
       btn.innerText = "Update Book";
 
-      editBtn.style.display = "none";
+      actionsContainer.style.display = "none";
     });
+    
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteBtn.className = "action-btn delete-btn";
+
+    deleteBtn.addEventListener("click", function () {
+      if (editRow === section) {
+        editRow = null;
+        btn.innerText = "Add Book";
+        title.value = "";
+        author.value = "";
+        year.value = "";
+      }
+      section.remove();
+    });
+
+    actionsContainer.appendChild(editBtn);
+    actionsContainer.appendChild(deleteBtn);
 
     section.appendChild(bookTitle);
     section.appendChild(bookAuthor);
     section.appendChild(bookYear);
-    section.appendChild(editBtn);
+    section.appendChild(actionsContainer);
 
     bookList.appendChild(section);
   }
