@@ -1,22 +1,23 @@
-# 📚 BookList App
+# BookList
 
-A simple **BookList App** built using **HTML, CSS, and JavaScript**. This project focuses on practicing **DOM manipulation** and basic **CRUD operations**.
+A simple **BookList** built using **HTML, CSS, and JavaScript**. This project focuses on practicing **DOM manipulation** and basic **CRUD operations**.
 
-## 🚀 Features
+## Features
 
-- Add a new book
-- Enter book title, author, and published year
-- Display books dynamically in a table-like list
-- Validate empty fields
-- Practice DOM element creation and manipulation
+- **Add Books:** Submit a book title, author, and published year into the list.
+- **Edit Records:** Click the **Pencil icon** to edit an existing book entry (the action buttons automatically hide while editing to keep the interface clean).
+- **Delete Records:** Click the **Trash icon** to instantly remove a book from the list.
+- **Form Validation:** Prevents submission if any field is left empty.
+- **Responsive & Centered UI:** Uses CSS Flexbox, custom gradients, and Font Awesome icons.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
+- Font Awesome
 
-## 🎯 Learning Goals
+## Learning Goals
 
 This project was created to practice:
 
@@ -28,21 +29,12 @@ This project was created to practice:
 - Input validation
 - CRUD operations
 
-## ▶️ How to Run
+## How to Run
 
 1. Clone the repository.
 2. Open the project in VS Code.
 3. Open `index.html` in your browser.
 4. Enter the book details.
 5. Click **Add Book**.
-
-## 📌 Future Improvements
-
-- Add Edit Book functionality
-- Add Delete Book functionality
-- Add Search functionality
-- Add Local Storage
-- Add book categories
-- Improve responsive design
-
----
+6. Click **Pencil icon** next to any book entry to update its details, then click **Update Book**.
+7. Click **Trash icon** to remove a book from the collection.
