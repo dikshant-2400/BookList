@@ -6,6 +6,13 @@ const btn = document.querySelector(".btn");
 
 let editRow = null;
 
+function updateSerialNumbers() {
+  const rows = bookList.querySelectorAll("section");
+  rows.forEach((row, index) => {
+    row.children[0].innerText = index + 1;
+  });
+}
+
 btn.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -36,6 +43,9 @@ btn.addEventListener("click", function (e) {
     btn.innerText = "Add Book";
   } else {
     const section = document.createElement("section");
+
+    const sno = document.createElement("div");
+    sno.innerText = bookList.children.length + 1;
 
     const bookTitle = document.createElement("div");
     bookTitle.innerText = title.value;
@@ -85,7 +95,8 @@ btn.addEventListener("click", function (e) {
 
     actionsContainer.appendChild(editBtn);
     actionsContainer.appendChild(deleteBtn);
-
+    
+    section.appendChild(sno);
     section.appendChild(bookTitle);
     section.appendChild(bookAuthor);
     section.appendChild(bookYear);
