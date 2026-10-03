@@ -6,7 +6,7 @@
 
 body {
     background-color: #080809;
-    background: linear-gradient(rgb(55, 43, 226), rgb(82, 5, 154));
+    background: linear-gradient(rgb(5, 5, 5), rgb(249, 249, 249));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,8 +40,18 @@ input {
 
 .table-section {
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    width: 100%;
+    padding: 10px 0;
+    background: #252323;
+}
+
+.table-section>div {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #book-list {
@@ -56,17 +66,20 @@ input {
 
 #book-list>section {
     display: flex;
+    width: 100%;
     align-items: center;
     position: relative;
     background: #fff;
     border-bottom: 1px solid #ccc;
-    padding: 10px;
-    padding-right: 10px;
+    padding: 10px 0;
 }
 
 #book-list>section>div {
     flex: 1;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .actions {
